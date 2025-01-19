@@ -2,10 +2,31 @@
 const tags = Array.from({ length: 50 }).map(
   (_, i, a) => `v1.2.0-beta.${a.length - i}`,
 )
+
+const data: Partial<Equipment> = {
+  id: 'imperial-boots',
+  name: 'Imperial Boots',
+  slot: 'boots',
+  rarity: 'imperial',
+  statsProgression: {
+    heroDefense: {
+      extra: {
+        lv_10: '100',
+        lv_30: '100',
+      },
+    },
+    magicDamageResistance: {
+      extra: {
+        lv_20: 10,
+        lv_40: 10,
+      },
+    },
+  },
+}
 </script>
 
 <template>
-  <NuxtLink to="/">
+  <!-- <NuxtLink to="/">
     To index
   </NuxtLink>
 
@@ -23,6 +44,7 @@ const tags = Array.from({ length: 50 }).map(
         <UiSeparator class="my-2" />
       </div>
     </div>
-    <UiScrollBar orientation="vertical" />
-  </UiScrollArea>
+    <UiScrollBar />
+  </UiScrollArea> -->
+  <Gear v-bind="data" />
 </template>

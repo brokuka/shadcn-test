@@ -1,7 +1,7 @@
 import animate from 'tailwindcss-animate'
 
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   darkMode: ['class'],
   safelist: ['dark'],
   prefix: '',
@@ -15,6 +15,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        nunito: ['Nunito'],
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -48,6 +51,18 @@ export default {
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
+        },
+        sidebar: {
+          DEFAULT: 'hsl(var(--sidebar-background))',
+          primary: {
+            DEFAULT: 'hsl(var(--sidebar-primary))',
+            foreground: 'hsl(var(--sidebar-primary-foreground))',
+          },
+          foreground: 'hsl(var(--sidebar-foreground))',
+          accent: {
+            DEFAULT: 'hsl(var(--sidebar-accent))',
+            foreground: 'hsl(var(--sidebar-accent-foreground))',
+          },
         },
       },
       borderRadius: {
